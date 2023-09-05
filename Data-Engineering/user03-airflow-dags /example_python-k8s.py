@@ -24,7 +24,7 @@ default_args = {
 }
 
 dag = DAG(
-    'kubernetes_sample',
+    'kubernetes_sample_of_not_admin_user03',
     default_args=default_args,
     schedule_interval=timedelta(minutes=10),
     tags=['example'],

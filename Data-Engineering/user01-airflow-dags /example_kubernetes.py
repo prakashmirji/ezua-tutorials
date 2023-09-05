@@ -16,7 +16,7 @@ default_args = {
 }
 
 with DAG(
-        dag_id='example_kubernetes_operator',
+        dag_id='example_kubernetes_of_admin_user01',
         default_args=default_args,
         schedule_interval=None,
         tags=['example'],
