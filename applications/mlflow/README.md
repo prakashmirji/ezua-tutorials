@@ -8,7 +8,6 @@ hyperparameter tuning, experiment tracking via MLFlow, and model deployment
 using Seldon and KServe. The use case under consideration is the well-known
 bike sharing dataset, sourced from the UCI Machine Learning Repository.
 
-
 The dataset records the hourly and daily count of rental bikes between 2011 and
 2012 in the Capital Bikeshare system, supplemented with corresponding weather
 and seasonal data. The primary objective of this dataset is to foster research
@@ -25,15 +24,14 @@ rental demand.
 To complete the tutorial follow the steps below:
 
 * Login to you EzAF cluster.
-* Create a new notebook server using the jupyter-data-science image.
+* Create a new notebook server using the jupyter-data-science image. Use at
+  least 4Gi of memory when creating the notebook server.
 * Clone the repository locally.
 * Create a new conda environment using the specified `environment.yaml` file:
   ```
   conda env create -f environment.yaml
   ```
-* Launch the `bike-sharing-mlflow.ipynb` notebook file and follow the
+* Launch the `bike-sharing-training.ipynb` notebook file and follow the
   instructions.
 * After the successful completion of the previous step, launch the
   `bike-sharing-prediction.ipynb` file to invoke the model you deployed.
-
-> It is recommended to create a Notebook server with at least 8Gi of memory
