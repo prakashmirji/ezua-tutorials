@@ -18,4 +18,3 @@ dependencies:
     - graphviz==0.20.1
     - pygraphviz==1.10
     - pydotplus==2.0.2
-    - kserve==0.8.0.2
