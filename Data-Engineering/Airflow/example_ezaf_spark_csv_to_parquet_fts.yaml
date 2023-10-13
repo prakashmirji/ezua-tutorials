@@ -48,4 +48,4 @@ spec:
   volumes:
     - name: spark-data
       persistentVolumeClaim:
-        claimName: {{dag_run.conf.get("username", "hpedemo-user01")}}-spark-pvc
+        claimName: user-pvc
