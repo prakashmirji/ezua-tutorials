@@ -24,7 +24,9 @@ with DAG(
     @task
     def write():
         with open(file_path, 'w') as fp:
+            print("=====>>>  Started writing")
             fp.write("Hello world")
+            print("=====>>>  Writing complete")
 
 
     @task
