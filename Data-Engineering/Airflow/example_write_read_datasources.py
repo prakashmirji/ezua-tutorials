@@ -23,7 +23,7 @@ with DAG(
 
     @task
     def write():
-        with open(file_path) as fp:
+        with open(file_path, 'w') as fp:
             fp.write("Hello world")
 
 
