@@ -26,7 +26,7 @@ with DAG(
             'file_path': Param("/mnt/datasources/df/airflow_write_read_test.txt", type="string"),
         }
 ) as dag:
-    file_path = {{dag_run.conf["file_path", "/mnt/datasources/df/airflow_write_read_test.txt"]}}
+    file_path = "{{dag_run.conf['file_path', '/mnt/datasources/df/airflow_write_read_test.txt']}}"
 
 
     @task
