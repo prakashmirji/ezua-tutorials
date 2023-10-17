@@ -34,8 +34,7 @@ with DAG(
             }
         }
 ) as dag:
-    file_path = "{{dag_run.conf['file_path']}}"
-
+    file_path = "{{params.file_path}}"
 
     @task
     def write():
@@ -43,7 +42,6 @@ with DAG(
             logger.info("Started writing file: ", file_path)
             fp.write("This this test message to verify writing and reading file to External DF by Airflow DAG.")
             logger.info("Writing complete")
-
 
     @task
     def read():
