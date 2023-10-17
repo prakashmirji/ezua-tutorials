@@ -2,6 +2,7 @@ from airflow import DAG
 from airflow.models.param import Param
 from airflow.decorators import task
 from airflow.utils.dates import days_ago
+from airflow.operators.python import get_current_context
 import logging
 
 logger = logging.getLogger(__name__)
@@ -37,7 +38,8 @@ with DAG(
 
     @task
     def write():
-        file_path = "{{dag_run.conf['file_path']}}"
+        file_path = get_current_context()['params']['file_path']
+
         with open(file_path, 'w') as fp:
             logger.info("Started writing file: ", file_path)
             fp.write("This this test message to verify writing and reading file to External DF by Airflow DAG.")
@@ -45,7 +47,8 @@ with DAG(
 
     @task
     def read():
-        file_path = "{{dag_run.conf['file_path']}}"
+        file_path = get_current_context()['params']['file_path']
+
         with open(file_path) as fp:
             logger.info("Start reading file: ", file_path)
             logger.info("Content of the file is: ", fp.read())
