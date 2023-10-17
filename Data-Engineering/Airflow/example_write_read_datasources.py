@@ -30,7 +30,7 @@ with DAG(
     @task
     def read():
         with open(file_path) as fp:
-            fp.read()
+            print("=====>>> Content is: " + fp.read())
 
 
     write() >> read()
