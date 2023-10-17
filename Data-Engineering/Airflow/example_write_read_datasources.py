@@ -18,7 +18,7 @@ with DAG(
         schedule_interval=None,
         tags=['DF']
 ) as dag:
-    file_path = "/mnt/datasources/test.txt"
+    file_path = "/mnt/datasources/df/test.txt"
 
 
     @task
