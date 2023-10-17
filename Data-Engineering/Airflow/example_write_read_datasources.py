@@ -24,9 +24,17 @@ with DAG(
         tags=['ezaf', 'external DF'],
         params={
             'file_path': Param("/mnt/datasources/df/airflow_write_read_test.txt", type="string"),
+        },
+        render_template_as_native_obj=True,
+        access_control={
+            'All': {
+                'can_read',
+                'can_edit',
+                'can_delete'
+            }
         }
 ) as dag:
-    file_path = "{{dag_run.conf['file_path', '/mnt/datasources/df/airflow_write_read_test.txt']}}"
+    file_path = "{{dag_run.conf['file_path']}}"
 
 
     @task
