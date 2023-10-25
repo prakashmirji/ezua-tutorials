@@ -22,7 +22,7 @@ with DAG(
         'sleep': Param(120, type="integer", minimum=0),
     },
     render_template_as_native_obj=True,
-    active_runs=20,
+    max_active_runs=20,
     access_control={
         'All': {
             'can_read',
